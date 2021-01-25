@@ -6,6 +6,7 @@ import { StatsViewComponent } from './stats/stats-view/stats-view.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'stats', pathMatch: 'full' },
   { path: 'auth', component: AuthViewComponent },
   { path: 'strava', redirectTo: 'https://www.strava.com/oauth/authorize?client_id=44502&response_type=code&redirect_uri=https://localhost:4200/auth&approval_prompt=force&scope=activity:read'},
   { path: 'stats', component: StatsViewComponent, canActivate:[AuthGuard] },
