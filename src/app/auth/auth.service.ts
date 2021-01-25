@@ -1,24 +1,36 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+
+import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  isLoggedIn: boolean = true;
+  isLoggedIn: boolean;
 
   constructor(private http: HttpClient) { }
 
-  connect() {
-  }
+  fetchToken(code: any) {
+    const body = {
+      code: code
+    }
 
-  fetchToken(key: any) {
+    this.http.post('http://localhost:3000/auth/token', body)
+      .pipe(take(1))
+      .subscribe(
+        data => this.saveToken(data),
+        err => alert('Invalid Code'));
   }
 
   checkIsLoggedIn() {
     return false;
   }
 
+  saveToken(data: any) {
+    this.isLoggedIn = true;
+    console.log(data);
+  }
 }
