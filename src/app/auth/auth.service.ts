@@ -13,9 +13,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  fetchToken(code: any) {
+  fetchToken(code: any, refresh: boolean) {
     const body = {
-      code: code
+      code: code,
+      grant_type: refresh? "refresh_token" : "authorization_code"
     }
 
     this.http.post('http://localhost:3000/auth/token', body)

@@ -19,7 +19,7 @@ export class AuthViewComponent implements OnInit {
     let code = window.location.href.indexOf('code');
     // if not logged in but have code - try to authenticate
     if(!this.isLoggedIn && code != -1) {
-      this.authService.fetchToken(window.location.href.substring(code + 5));
+      this.authService.fetchToken(window.location.href.substring(code + 5), false);
     }
   }
 
