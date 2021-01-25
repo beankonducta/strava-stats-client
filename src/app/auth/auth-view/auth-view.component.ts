@@ -8,12 +8,26 @@ import { AuthService } from '../auth.service';
 })
 export class AuthViewComponent implements OnInit {
 
+  isLoggedIn: boolean;
+
   constructor(private authService: AuthService) { }
 
+
   ngOnInit(): void {
+    // check if we're logged in
+    this.isLoggedIn = this.authService.checkIsLoggedIn();
+    // check if URL contains code
+    let code = window.location.href.indexOf('code');
+    // if not logged in but have code - try to authenticate
+    if(!this.isLoggedIn && code != -1) {
+      this.authService.fetchToken(window.location.href.substring(code + 5));
+    }
   }
 
+  // connects to strava, returns token
   connect() {
-    this.authService.connect();
+    // I think we should use router instead of window.location.href
+    // or maybe it doesn't matter
+    window.location.href = 'https://www.strava.com/oauth/authorize?client_id=44502&response_type=code&redirect_uri=https://localhost:4200/auth&approval_prompt=force&scope=activity:read';
   }
 }
