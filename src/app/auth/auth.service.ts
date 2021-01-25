@@ -13,14 +13,10 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login() {
+  connect() {
     return this.http.get<any>(`${this.apiUrl}/`).subscribe(val => {
       // this won't work until we get https on localhost
       console.log(val);
     })
-  }
-
-  logout() {
-
   }
 }

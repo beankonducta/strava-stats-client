@@ -13,8 +13,7 @@ export class AuthViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
-    this.authService.login();
+  connect() {
+    this.authService.connect();
   }
-
 }
