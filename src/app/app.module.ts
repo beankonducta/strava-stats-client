@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StatsModule } from './stats/stats.module';
 import { AuthModule } from './auth/auth.module';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AuthModule } from './auth/auth.module';
     AppRoutingModule,
     HttpClientModule,
     StatsModule,
-    AuthModule
+    AuthModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
