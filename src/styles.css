@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Trispace&display=swap');
+
 .card {
 	border-radius:6px;
-	border:1px solid #dcdcdc;
 	text-align: center;
+	font-family: 'Trispace';
 }
 
 .small-card {
 	border-radius:6px;
 	border:1px solid #dcdcdc;
 	text-align: center;
+}
+
+h1 {
+	font-size: 4em;
 }
 
 /** BUTTON STYLES **/
@@ -41,6 +47,28 @@ button:active {
 
 /** END BUTTON STYLES **/
 
+/** SCROLLBAR STYLES **/
+
+::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(240, 240, 240);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(200, 200, 200);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(180, 180, 180);
+}
+
+/** END SCROLLBAR STYLES **/
 
 /** CSS RESET **/
 
@@ -60,8 +88,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 	text-transform: uppercase;
 }
