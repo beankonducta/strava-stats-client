@@ -6,6 +6,11 @@
 	font-family: 'Trispace';
 }
 
+.sq-card {
+	text-align: center;
+	font-family: 'Trispace';
+}
+
 .small-card {
 	border-radius:6px;
 	border:1px solid #dcdcdc;
@@ -14,6 +19,15 @@
 
 h1 {
 	font-size: 4em;
+	color: #fe3500;
+}
+
+h2 {
+	color: #fe3500;
+}
+
+h3 {
+	color: #fe3500;
 }
 
 /** BUTTON STYLES **/
@@ -65,7 +79,7 @@ button:active {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(180, 180, 180);
+    background: #fe3500;
 }
 
 /** END SCROLLBAR STYLES **/

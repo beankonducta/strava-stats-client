@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StatsModule } from './stats/stats.module';
 import { AuthModule } from './auth/auth.module';
+import { FooterModule } from './footer/footer.module';
 import { PipesModule } from './pipes/pipes.module';
 
 import { CookieService } from 'ngx-cookie-service';
@@ -22,6 +23,7 @@ import { CookieService } from 'ngx-cookie-service';
     StatsModule,
     AuthModule,
     PipesModule,
+    FooterModule,
     BrowserAnimationsModule
   ],
   providers: [CookieService],
