@@ -23,4 +23,8 @@ export class StatsViewComponent implements OnInit {
   get times() {
     return this.statsService.times;
   }
+
+  get name() {
+    return this.statsService.name;
+  }
 }

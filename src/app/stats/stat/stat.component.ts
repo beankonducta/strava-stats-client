@@ -7,9 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class StatComponent implements OnInit {
 
-  @Input() stat: String | 'stat';
-  @Input() title: String | 'title';
-  @Input() type: String | 'null';
+  @Input() stat: String;
+  @Input() title: String;
+  @Input() type: String;
 
   constructor() { }
 

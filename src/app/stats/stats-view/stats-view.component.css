@@ -3,11 +3,16 @@
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 5%;
-    height: 50%;
+    min-height: 50%;
     text-align: center;
 }
 
 .title {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.name {
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
