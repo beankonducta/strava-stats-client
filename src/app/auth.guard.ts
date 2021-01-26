@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
   }
 
   checkLogin() {
-    if (this.authService.isLoggedIn) { return true; }
+    if (this.authService.checkIsLoggedIn) { return true; }
     return this.router.navigate(['auth']);
   }
 }

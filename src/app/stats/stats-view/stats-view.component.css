@@ -6,3 +6,8 @@
     height: 50%;
     text-align: center;
 }
+
+.title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

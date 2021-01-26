@@ -1,14 +1,20 @@
 <div class="stats-view card">
-  <h1>stats view works</h1>
   <div *ngIf="times | async as time">
-    <h1> Mile Time Averages</h1>
-      <app-stat [stat]="time.recent" [title]="'Recent'"></app-stat>
-      <app-stat [stat]="time.ytd" [title]="'Year To Date'"></app-stat>
-      <app-stat [stat]="time.avg" [title]="'Total Average'"></app-stat>
+    <h1 class="title">{{ statsService.name }} Mile Time Averages</h1>
+    <app-stat [stat]="time.recent" [title]="'Recent'" [type]="'avg'"></app-stat>
+    <app-stat [stat]="time.ytd" [title]="'Year To Date'" [type]="'avg'"></app-stat>
+    <app-stat [stat]="time.avg" [title]="'Total Average'" [type]="'avg'"></app-stat>
   </div>
-  <div *ngIf="times | async as time">
-    <app-stat [stat]="time.recent"></app-stat>
-    <app-stat [stat]="time.ytd"></app-stat>
-    <app-stat [stat]="time.avg"></app-stat>
-</div>
+  <div *ngIf="stats | async as stat">
+    <h1 class="title">{{ statsService.name }} Total Running Stats</h1>
+    <app-stat [stat]="stat.all_run_totals.count" [title]="'Count'" [type]="'count'"></app-stat>
+    <app-stat [stat]="stat.all_run_totals.distance" [title]="'Distance'" [type]="'miles'"></app-stat>
+    <app-stat [stat]="stat.all_run_totals.moving_time" [title]="'Time'" [type]="'time'"></app-stat>
+  </div>
+  <div *ngIf="stats | async as stat">
+    <h1 class="title">{{ statsService.name }} Year To Date Running Stats</h1>
+    <app-stat [stat]="stat.ytd_run_totals.count" [title]="'Count'" [type]="'count'"></app-stat>
+    <app-stat [stat]="stat.ytd_run_totals.distance" [title]="'Distance'" [type]="'miles'"></app-stat>
+    <app-stat [stat]="stat.ytd_run_totals.moving_time" [title]="'Time'" [type]="'time'"></app-stat>
+  </div>
 </div>
