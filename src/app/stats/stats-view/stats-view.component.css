@@ -1,10 +1,16 @@
 .stats-view {
-    width: 50%;
-    margin-left: 25%;
-    margin-right: 25%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-top: 5%;
-    min-height: 50%;
+    height: 80%;
     text-align: center;
+    overflow: hidden;
+}
+
+.stats-inner {
+    height:90%;
+    overflow-y: auto;
 }
 
 .title {

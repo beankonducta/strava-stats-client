@@ -1,21 +1,29 @@
 <div class="stats-view card">
   <h1 class="name">{{ name }} </h1>
-  <div *ngIf="times | async as time">
-    <h3 class="title">Mile Time Averages</h3>
-    <app-stat [stat]="time.recent" [title]="'Recent'" [type]="'avg'"></app-stat>
-    <app-stat [stat]="time.ytd" [title]="'Year To Date'" [type]="'avg'"></app-stat>
-    <app-stat [stat]="time.avg" [title]="'Total Average'" [type]="'avg'"></app-stat>
-  </div>
-  <div *ngIf="stats | async as stat">
-    <h3 class="title">Total Running Stats</h3>
-    <app-stat [stat]="stat.all_run_totals.count" [title]="'Count'" [type]="'count'"></app-stat>
-    <app-stat [stat]="stat.all_run_totals.distance" [title]="'Distance'" [type]="'miles'"></app-stat>
-    <app-stat [stat]="stat.all_run_totals.moving_time" [title]="'Time'" [type]="'time'"></app-stat>
-  </div>
-  <div *ngIf="stats | async as stat">
-    <h3 class="title">Year To Date Running Stats</h3>
-    <app-stat [stat]="stat.ytd_run_totals.count" [title]="'Count'" [type]="'count'"></app-stat>
-    <app-stat [stat]="stat.ytd_run_totals.distance" [title]="'Distance'" [type]="'miles'"></app-stat>
-    <app-stat [stat]="stat.ytd_run_totals.moving_time" [title]="'Time'" [type]="'time'"></app-stat>
+  <div class="stats-inner">
+    <div *ngIf=" times | async as time">
+      <h3 class="title">Mile Time Averages</h3>
+      <app-stat [stat]="time.recent" [title]="'Recent'" [type]="'avg'"></app-stat>
+      <app-stat [stat]="time.ytd" [title]="'Year To Date'" [type]="'avg'"></app-stat>
+      <app-stat [stat]="time.avg" [title]="'Total Average'" [type]="'avg'"></app-stat>
+    </div>
+    <div *ngIf="stats | async as stat">
+      <h3 class="title">Total Running Stats</h3>
+      <app-stat [stat]="stat.all_run_totals.count" [title]="'Count'" [type]="'count'"></app-stat>
+      <app-stat [stat]="stat.all_run_totals.distance" [title]="'Distance'" [type]="'miles'"></app-stat>
+      <app-stat [stat]="stat.all_run_totals.moving_time" [title]="'Time'" [type]="'time'"></app-stat>
+    </div>
+    <div *ngIf="stats | async as stat">
+      <h3 class="title">Year To Date Running Stats</h3>
+      <app-stat [stat]="stat.ytd_run_totals.count" [title]="'Count'" [type]="'count'"></app-stat>
+      <app-stat [stat]="stat.ytd_run_totals.distance" [title]="'Distance'" [type]="'miles'"></app-stat>
+      <app-stat [stat]="stat.ytd_run_totals.moving_time" [title]="'Time'" [type]="'time'"></app-stat>
+    </div>
+    <div *ngIf="stats | async as stat">
+      <h3 class="title">Year To Date Running Stats</h3>
+      <app-stat [stat]="stat.ytd_run_totals.count" [title]="'Count'" [type]="'count'"></app-stat>
+      <app-stat [stat]="stat.ytd_run_totals.distance" [title]="'Distance'" [type]="'miles'"></app-stat>
+      <app-stat [stat]="stat.ytd_run_totals.moving_time" [title]="'Time'" [type]="'time'"></app-stat>
+    </div>
   </div>
 </div>
