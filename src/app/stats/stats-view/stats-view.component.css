@@ -10,7 +10,7 @@
 
 .stats-inner {
     height: 80%;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 .title {

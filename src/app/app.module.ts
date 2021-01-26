@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
@@ -20,7 +21,8 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     StatsModule,
     AuthModule,
-    PipesModule
+    PipesModule,
+    BrowserAnimationsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
