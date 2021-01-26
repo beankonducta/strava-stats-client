@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class StatComponent implements OnInit {
 
   @Input() stat: String; // string for now
+  @Input() title: String;
 
   constructor() { }
 

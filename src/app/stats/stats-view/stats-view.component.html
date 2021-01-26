@@ -1,6 +1,14 @@
 <div class="stats-view card">
   <h1>stats view works</h1>
   <div *ngIf="times | async as time">
-      <app-stat [stat]="time.ytd"></app-stat>
+    <h1> Mile Time Averages</h1>
+      <app-stat [stat]="time.recent" [title]="'Recent'"></app-stat>
+      <app-stat [stat]="time.ytd" [title]="'Year To Date'"></app-stat>
+      <app-stat [stat]="time.avg" [title]="'Total Average'"></app-stat>
   </div>
+  <div *ngIf="times | async as time">
+    <app-stat [stat]="time.recent"></app-stat>
+    <app-stat [stat]="time.ytd"></app-stat>
+    <app-stat [stat]="time.avg"></app-stat>
+</div>
 </div>

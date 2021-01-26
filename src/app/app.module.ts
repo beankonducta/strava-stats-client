@@ -8,6 +8,8 @@ import { StatsModule } from './stats/stats.module';
 import { AuthModule } from './auth/auth.module';
 import { PipesModule } from './pipes/pipes.module';
 
+import { CookieService } from 'ngx-cookie-service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +22,7 @@ import { PipesModule } from './pipes/pipes.module';
     AuthModule,
     PipesModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
