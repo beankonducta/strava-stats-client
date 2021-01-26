@@ -1,30 +1,35 @@
 import { Injectable } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { take } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
 
   isLoggedIn: boolean;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  times: any;
+  stats: any;
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   fetchToken(code: any, refresh: boolean) {
     const body = {
       code: code,
-      grant_type: refresh? "refresh_token" : "authorization_code"
-    }
+      grant_type: refresh ? 'refresh_token' : 'authorization_code',
+    };
 
-    this.http.post('http://localhost:3000/auth/token', body)
+    this.http
+      .post('http://localhost:3000/auth/token', body)
       .pipe(take(1))
       .subscribe(
-        data => this.saveToken(data),
-        err => alert('Invalid Code'));
+        (data) => this.saveToken(data),
+        (err) => alert('Invalid Code')
+      );
   }
 
   checkIsLoggedIn() {
@@ -34,15 +39,11 @@ export class AuthService {
   saveToken(data: any) {
     this.isLoggedIn = true;
     this.router.navigate(['stats']);
-    console.log(this.isLoggedIn);
     // save token in cookie here
-
     // test api call below
 
-    // this.http.get(`http://localhost:3000/athletes/${data.athlete.id}/avgmile?token=${data.access_token}`)
-    // .pipe(take(1))
-    // .subscribe(
-    //   res => console.log(res)
-    // )
+    this.times = this.http.get(`http://localhost:3000/athletes/${data.athlete.id}/avg_mile_time?token=${data.access_token}`)
+
+    this.stats = this.http.get(`http://localhost:3000/athletes/${data.athlete.id}/stats?token=${data.access_token}`)
   }
 }

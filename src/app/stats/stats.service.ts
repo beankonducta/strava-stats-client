@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
 
+import { AuthService } from '../auth/auth.service';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StatsService {
+  constructor(private authService: AuthService) {
+  }
 
-  constructor() { }
+  get stats() {
+    return this.authService.stats;
+  }
+
+  get times() {
+    return this.authService.times;
+  }
 }

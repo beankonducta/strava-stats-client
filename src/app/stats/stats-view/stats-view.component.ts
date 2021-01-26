@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StatsService } from '../stats.service';
+
 @Component({
   selector: 'app-stats-view',
   templateUrl: './stats-view.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatsViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private statsService: StatsService) { }
 
   ngOnInit(): void {
+  }
+
+  get stats() {
+    return this.statsService.stats;
+  }
+
+  get times() {
+    return this.statsService.times;
   }
 
 }
