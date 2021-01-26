@@ -1,4 +1,6 @@
 <div class="stats-view card">
   <h1>stats view works</h1>
-  <div *ngIf="times | async as time">{{ time.ytd }}</div>
+  <div *ngIf="times | async as time">
+      <app-stat [stat]="time.ytd"></app-stat>
+  </div>
 </div>
