@@ -14,6 +14,7 @@ export class AuthViewComponent implements OnInit {
 
   ngOnInit(): void {
     // check if we're logged in
+    console.log('checking log in status');
     this.isLoggedIn = this.authService.checkIsLoggedIn();
     if (this.isLoggedIn) this.router.navigate(['/stats']);
     // check if URL contains code

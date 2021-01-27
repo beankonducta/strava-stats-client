@@ -6,9 +6,8 @@ import { StatsViewComponent } from './stats/stats-view/stats-view.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'stats', pathMatch: 'full' },
-  { path: '**', redirectTo: '/stats' },
-  { path: 'auth', component: AuthViewComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: 'auth', component: AuthViewComponent },
   { path: 'stats', component: StatsViewComponent, canActivate: [AuthGuard] },
 ];
 
