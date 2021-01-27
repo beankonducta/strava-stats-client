@@ -7,13 +7,13 @@ import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'stats', pathMatch: 'full' },
-  { path: 'auth', component: AuthViewComponent },
-  { path: 'strava', redirectTo: 'https://www.strava.com/oauth/authorize?client_id=44502&response_type=code&redirect_uri=https://localhost:4200/auth&approval_prompt=force&scope=activity:read'},
-  { path: 'stats', component: StatsViewComponent, canActivate:[AuthGuard] },
+  { path: '**', redirectTo: '/stats' },
+  { path: 'auth', component: AuthViewComponent, canActivate: [AuthGuard] },
+  { path: 'stats', component: StatsViewComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
