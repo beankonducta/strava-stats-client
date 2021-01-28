@@ -35,8 +35,12 @@ export class AuthService {
     return this.cookieService.check('strava_auth');
   }
 
+  hasRefreshToken() {
+    return this.cookieService.check('strava_refresh');
+  }
+
   saveToken(data: any) {
-    this.cookieService.set('strava_auth', data.access_token, data.expires_at);
+    this.cookieService.set('strava_auth', data.access_token, new Date(data.access_token));
     this.cookieService.set('strava_refresh', data.refresh_token);
     this.router.navigate(['stats']);
   }

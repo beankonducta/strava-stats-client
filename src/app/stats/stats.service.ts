@@ -18,11 +18,10 @@ export class StatsService {
   }
 
   fetchData() {
-    if(!this.cookieService.check('strava_auth')) {
+    if(!this.cookieService.check('strava_auth')) { 
       this.authService.fetchToken(this.cookieService.get('refresh_token'), true);
     }
     const access = this.cookieService.get('strava_auth');
-    // if not access, renew token
     this.http.get(`http://localhost:3000/athlete?token=${access}`).pipe(take(1)).subscribe((athlete: any) => {
       this.name = `${athlete.firstname} ${athlete.lastname}`;
       this.times = this.http.get(`http://localhost:3000/athletes/${athlete.id}/avg_mile_time?token=${access}`);
